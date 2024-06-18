@@ -35,8 +35,11 @@ jobs:
         name: zed
         path: target\release\Zed.exe
 
+    - name: Tar release
+      run: tar -zcvf release.tar.gz target\release
+
     - name: Upload release
       uses: actions/upload-artifact@v4
       with:
         name: release
-        path: target\release\
+        path: release.tar.gz
